@@ -304,7 +304,7 @@
                                                             <td> <div class="container">
                                                                     <center><p>Pesanmu Yaitu :</p></center>
                                                                     <hr>
-                                                                    <center><p><img src="{!! QrCode::size(100)->generate($data); !!}"></p></center>
+                                                                    <center><p><img src="{!! QrCode::size(100)->generate($url); !!}"></p></center>
                                                                     <hr>
                                                                     <center><p>Telah Disampaikan! <br> Terimakasih telah menghubungi kami!</p></center>
                                                                 </div>

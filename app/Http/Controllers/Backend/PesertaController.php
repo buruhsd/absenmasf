@@ -63,9 +63,10 @@ class PesertaController extends Controller
         $data->nama_perusahaan = $request->nama_perusahaan;
         $data->no_hp = $request->no_hp;
         $data->save();
+        $url = route('frontend.peserta.confirm.id', $data->id);
 
 
-        Mail::send('components.email', compact('data'), function ($m) use ($data) {
+        Mail::send('components.email', compact('data', 'url'), function ($m) use ($data, $url) {
                 $m->to($data->email, $data->name)->subject('Konfirmasi Permohonan');
           echo "Basic Email Sent. Check your inbox.";
 
@@ -78,6 +79,6 @@ class PesertaController extends Controller
     public function confirm($data){
         $data = PesertaConfirm::find($data);
         $data->hadir = true;
-        $data->save()
+        $data->save();
     }
 }

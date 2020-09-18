@@ -19,6 +19,8 @@ Route::group(['as' => 'frontend.'], function () {
 
     Route::get('peserta/register', 'Backend\PesertaController@register')->name('peserta.register');
     Route::post('peserta/confirm', 'Backend\PesertaController@confirm_register')->name('peserta.confirm');
+
+    Route::get('peserta/confirm/{id}', 'Backend\PesertaController@confirm_register')->name('peserta.confirm.id');
 });
 
 /*
